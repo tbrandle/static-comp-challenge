@@ -1,168 +1,161 @@
-/*******************************
-          GENERAL
-*******************************/
-
-body{
-  display: flex
+/* Base */
+html,
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
 }
 
-/*******************************
-       SECTION/CONTAINER
-*******************************/
-
-.container{
+/* Layout */
+body {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  width: 50%;
-  height: 100vh;
+  flex-direction: column;
 }
 
-.img-conatiner {
-  position: relative;;
-  background-image: url("images/honnold.jpg");
-  background-repeat: no-repeat;
+h1, p {
+  margin: 0;
+}
+
+h1 {
+  line-height: 1.8;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 40%;
+  background: url(images/honnold.jpg) no-repeat;
   background-size: cover;
 }
 
-.content-container {
-  position: absolute;
-  top: 41%;
-  left: 36%;
-  display: block;
-}
-
-.back{
-  position: absolute;
-  top: 46%;
-  left: 6%;
-}
-
-.next {
-  position: absolute;
-  top: 46%;
-  right: 6%;
+.box-container {
+  display: flex;
+  flex-basis: 60%;
+  flex-wrap: wrap;
 }
 
 .circles {
   position: absolute;
-  top: 1%;
-  right: 8%;
+  top: 10px;
+  right: 20px;
 }
 
-/*******************************
-       PROFILE CONTAINER
-********************************/
-
-.profile-container{
-  margin: 25px 20px 0;
-  color: white;
+.profile-container {
+  padding: 20px 10px;
 }
-.profile-btn {
-  background-color: transparent;
-  color: white;
-  border: 1px white solid;
+
+.btn-container {
+  margin-top: 20px;
+}
+
+button {
+  min-width: 90px;
   padding: 10px;
-  margin-right: 15px;
-  width: 90px;
+  background-color: transparent;
+  border: 1px white solid;
+  color: white;
+  text-transform: uppercase;
 }
 
-
-/*******************************
-       BOX STYLE
-*******************************/
-
-.icon{
-  width: 40px;
-  height: auto;
-  color: white;
+button:first-child {
+  margin-right: 15px;
 }
 
 .box {
-  position: relative;
-  width: 33.333%;
-  height: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  min-height: 100px;
 }
 
-.box1 {
+.heading-box,
+.footer-box {
+  flex-basis: 100%;
+}
+
+.box p {
+  margin-top: 10px
+}
+
+.icon {
+  max-width: 40px;
+  height: auto;
+}
+
+.left-arrow {
+  margin-left: 10px;
+}
+
+.right-arrow {
+  margin-right: 10px;
+}
+
+.heading-box,
+.vertex {
   background-color: #BDBDBD;
-  order: 8;
 }
 
-.box2 {
+.campfire {
   background-color: #E16036;
-  flex-grow: 2;
-  order: 7;
 }
 
-.box3 {
+.mountains {
   background-color: #6C756B;
-  order: 6;
 }
 
-.box4 {
+.carabiner {
   background-color: #93ACB5;
-  order: 5;
 }
 
-.box5 {
-  background-color: #BBDEFB;
-  order: 4;
+.tent {
+  background-color: #808080;
 }
 
-.box6{
-  background-color: grey;
-  order: 3;
-}
-
-.box7 {
+.rock-climbing {
   background-color: #81171B;
-  order: 2;
 }
 
-.box8{
+.footer-box {
   background-color: #0292F2;
-  order: 1;
 }
 
 
-/*******************************
-       MEDIA QUERIES
-*******************************/
-
-@media screen and (max-width:775px) {
+@media(min-width: 600px) {
   body {
-    flex-direction: column-reverse;
-  }
-  .container {
-    width: 100%;
-  }
-  .content-container{
-    top: 36%;
-    left: 43%;
-  }
-  .img-conatiner{
-    background-position: top;
-    height: 45vh;
+    flex-direction: row-reverse;
   }
 
-  .box {
-    width: 50%;
-    height: 25%;
-    font-size: x-small;
+  .img-container,
+  .box-container {
+    flex: 1 1 50%;
   }
 
-  .box-container{
-    bottom: 0;
-    top: 44%;
-  }
-  .profile-btn{
-    width: 65px;
-    margin-right: 7px;
-  }
-  .profile-container{
-    margin: 20px 6px 0;
+  .img-container {
+    background-position-x: 10%;
   }
 }
 
-@media screen and (max-width:560px) {
+@media(min-width: 1160px) {
+  .heading-box,
+  .footer-box {
+    flex-basis: 50%;
+  }
+}
+
+@media(min-width: 1360px) {
+  .box.heading-box,
+  .box.footer-box {
+    flex-basis: 100%;
+  }
+  .box {
+    flex-basis: 33.3333%;
+  }
+}
